@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폼(Form) 입력 태그</title>
+  </head>
+
+  <body>
+    <!-- 
+      사용자가 로그인, 회원가입, 댓글 작성 등을 할 때 데이터를 입력받는 관련 핵심 태그들임
+    -->
+
+    <form action="https://api.example.com/login" method="POST">
+      <!-- 
+        form 태그. 사용자가 입력한 데이터를 서버(백엔드)로 묶어서 보내주는 거대한 '택배 상자' 역할임
+        action 속성에는 목적지(서버 주소)를 적고, method 속성에는 보내는 방식(GET, POST 등)을 적는 게 정석임
+      -->
+
+      <label for="userId">아이디</label>
+      <input type="text" id="userId" name="userId" placeholder="아이디" />
+      <!-- 
+        label의 for 속성값과 input의 id 속성값을 똑같이 맞추면 둘이 연결됨!
+        이러면 사용자가 글씨("아이디")만 클릭해도 입력창에 커서가 깜빡임 (모바일 터치 편의성 + 시각장애인 리더기 필수 조건)
+      -->
+
+      <button type="submit">버튼</button>
+      <!-- 
+        form 안의 버튼은 기본적으로 '제출(submit)' 역할을 함
+        클릭하면 form 안의 데이터가 action에 적힌 서버로 슝 날아감
+      -->
+    </form>
+
+    <label for="userClaim">긴 글 인풋</label>
+    <textarea id="userClaim" name="claim" rows="5">미리 적어둘 내용이 있다면 여기에 씁니다.</textarea>
+    <!-- 
+      textarea 태그. input과 달리 여러 줄의 긴 텍스트(자기소개, 게시글 본문 등)를 입력받을 때 씀
+      <input />처럼 스스로 닫는 빈 태그가 아니라, 반드시 열고 닫는 태그(</textarea>)가 있다는 게 포인트임! 
+    -->
+
+    <label for="country1">국가 선택 (기본 드롭다운)</label>
+    <select id="country1" name="country">
+      <option value="">--선택하세요--</option>
+      <option value="kr">대한민국</option>
+      <option value="us">미국</option>
+    </select>
+    <!-- 
+      select와 option 태그. 흔히 아는 '드롭다운 목록'임
+      화면에 보이는 글자("대한민국")와 실제 서버로 넘어가는 데이터(value="kr")를 다르게 설정할 수 있는 게 핵심
+    -->
+
+    <label for="country2">국가 선택 (그룹화 드롭다운)</label>
+    <select id="country2" name="countryGroup">
+      <optgroup label="아시아">
+        <option value="kr">한국</option>
+        <option value="jp">일본</option>
+      </optgroup>
+      <optgroup label="유럽">
+        <option value="de">독일</option>
+      </optgroup>
+    </select>
+    <!-- 
+      optgroup 태그. 옵션들이 너무 많을 때 카테고리(그룹)로 예쁘게 묶어주는 역할
+      label 속성으로 그룹 이름을 달아줌
+    -->
+
+    <form action="">
+      <label for="searchCountry">국가 검색 (자동완성)</label>
+      <input type="text" id="searchCountry" name="search" list="countryList" />
+
+      <datalist id="countryList">
+        <option value="한국">대한민국</option>
+        <option value="미국">미국</option>
+        <option value="중국">중국</option>
+      </datalist>
+    </form>
+    <!-- 
+      datalist 태그. input 창에 글자를 치면 아래에 연관 검색어(자동완성)가 뜨게 만들어줌
+      input의 list 속성값과 datalist의 id 값을 똑같이 맞춰주면 연결 끝! 
+      (select랑 비슷해 보이지만, 사용자가 직접 다른 글자를 자유롭게 타이핑할 수도 있다는 점이 다름) 
+    -->
+
+    <!-- 
+      =========================
+      잘못된 예시 
+      ========================= 
+    -->
+
+    <!-- 1. label 없이 input만 덩그러니 놓기 -->
+    <input type="text" />
+    <!-- 
+      이렇게 쓰면 시각장애인용 리더기가 이 입력창이 뭐 하는 창인지 절대 모름
+      무조건 label 태그로 묶어서 설명해 줘야 함
+    -->
+
+    <!-- 2. for랑 id 짝짝이로 쓰거나 빼먹기 -->
+    <label for="userId">아이디</label>
+    <input type="text" id="user_id" />
+    <!-- 
+      대소문자 하나, 언더바 하나라도 다르면 연결이 뚝 끊어짐
+      복붙해서라도 정확히 똑같은 문자로 맞춰야 함
+    -->
+
+    <!-- 3. form 없이 버튼만 대충 만들기 -->
+    <input type="text" id="id" />
+    <button>제출</button>
+    <!-- 
+      단순 JS로 화면 안에서만 깔짝거릴 거면 상관없지만, 서버로 진짜 데이터를 넘길 거라면 이 요소들을 싹 다 감싸는 거대한 <form> 껍데기가 무조건 존재해야 함
+    -->
+  </body>
+</html>

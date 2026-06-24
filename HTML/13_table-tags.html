@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>표(Table) 태그</title>
+  </head>
+
+  <body>
+    <!-- 
+      table 태그 안에는 엑셀처럼 행(Row)과 열(Column)을 그리는 수많은 자식 태그들이 들어감
+      구역을 나누는 삼대장(thead, tbody, tfoot)과 실제 칸을 만드는 삼대장(tr, th, td)을 조합해서 씀 
+    -->
+
+    <table>
+      <!-- 표 전체를 감싸는 뼈대이자 겉포장지 -->
+
+      <caption>
+        성적
+      </caption>
+      <!-- 
+        표의 '제목'을 나타냄
+        시각장애인 스크린 리더기가 표를 읽기 전에 가장 먼저 읽어주는 핵심 정보임 
+        규칙: 무조건 table 태그 열자마자 바로 밑에(첫 번째 자식으로) 써야 함! 
+      -->
+
+      <thead>
+        <!-- 표의 머리글(컬럼 제목들)을 묶어주는 구역 -->
+        <tr>
+          <!-- tr (Table Row). '가로로 한 줄(행)'을 만든다는 뜻임 -->
+          <th>이름</th>
+          <th>파이썬</th>
+          <th>HTML</th>
+          <th>JS</th>
+          <!-- th (Table Header). 제목 칸 -->
+        </tr>
+      </thead>
+
+      <tbody>
+        <!-- 표의 핵심 본문(실제 데이터들)을 묶어주는 구역 -->
+        <tr>
+          <!-- 새로운 가로 한 줄 시작 (1행) -->
+          <th>양예지</th>
+          <td>54</td>
+          <td>88</td>
+          <td>0</td>
+          <!-- td (Table Data). 일반적인 데이터 칸이고, tr(줄) 안에 이 td(칸)를 넣어서 표를 조립하는 거임 -->
+        </tr>
+        <tr>
+          <!-- 또 새로운 가로 한 줄 시작 (2행) -->
+          <th>최민주</th>
+          <td>30</td>
+          <td>85</td>
+          <td>0</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <!-- 표의 바닥글. 보통 합계, 평균, 총계 같은 요약 정보를 묶어둘 때 씀 -->
+        <tr>
+          <th>평균</th>
+          <td>50.3점</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <!-- 
+      =========================
+      잘못된 예시
+      ========================= 
+    -->
+
+    <!-- 1. tr 없이 td만 냅다 던지기 -->
+    <table>
+      <td>데이터 1</td>
+      <td>데이터 2</td>
+    </table>
+    <!-- 가로줄(tr)을 먼저 깔지 않고 칸(td)부터 만들면 브라우저가 표 모양을 제대로 못 그려냄. 무조건 tr 안에 td가 들어가야 함 -->
+
+    <!-- 2. caption 위치 마음대로 쓰기 -->
+    <table>
+      <thead>
+        ...
+      </thead>
+      <caption>
+        나의 성적표
+      </caption>
+    </table>
+    <!-- 표 제목을 맨 밑에 보여주고 싶다고 caption 태그를 밑에다 적으면 문법 오류임. 
+    caption은 무조건 table 바로 밑에 쓰고, 위치를 아래로 내리고 싶으면 CSS(caption-side: bottom;)로 조절하는 게 정석 -->
+
+    <!-- 
+      =========================
+      올바른 예시
+      ========================= 
+    -->
+    <!-- 엑셀의 '셀 병합'처럼 칸을 합치고 싶을 땐 colspan(가로 병합), rowspan(세로 병합) 속성을 씀 -->
+
+    <table>
+      <caption>
+        인공지능학과 성적 (4.5 만점)
+      </caption>
+      <thead>
+        <tr>
+          <th>전공</th>
+          <th>학점</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>운영체제</td>
+          <td>4.5</td>
+        </tr>
+        <tr>
+          <td>컴퓨터비전</td>
+          <td>4.5</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2" style="text-align: center">전 과목 A+ 달성</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
