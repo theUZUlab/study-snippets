@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>총정리</title>
+  </head>
+
+  <body>
+    <!-- 
+      =========================
+      전역 속성
+      =========================
+      
+      * id="uniqueName" : 문서 내에서 절대 중복 불가! 단 하나만 존재하는 고유 식별자. (JS 조작, 해시 링크, label 연결용)
+      * class="box red" : 여러 태그에 중복 사용 가능한 그룹 이름표. (주로 CSS 스타일링용. 띄어쓰기로 여러 개 부여 가능)
+      * style="color: red;" : 인라인 CSS. (급할 때 아니면 쓰지 마셈)
+      * title="마우스 올리면 뜸" : 요소에 마우스를 가만히 올렸을 때 나타나는 툴팁 설명.
+      * hidden : 화면에서 요소를 완전히 숨김. (display: none; 과 같은 효과)
+      * tabindex="0" : 키보드 Tab 키 이동 순서. (0: 자연스러운 순서, -1: 탭으로 접근 불가, 1 이상: 강제 순서 지정이나 웹 접근성상 비추천)
+      * data-user-id="123" : 커스텀 데이터 속성. (개발자가 HTML 요소에 몰래 데이터를 숨겨두고 JS로 빼서 쓸 때 개꿀임)
+      * draggable="true" : 마우스로 요소를 드래그할 수 있게 만듦.
+      * contenteditable="true" : 일반 p 태그나 div 태그를 메모장처럼 사용자가 직접 텍스트를 수정할 수 있게 만듦! 
+    -->
+
+    <!-- 
+      =========================
+      시맨틱 레이아웃 
+      ========================= 
+    -->
+
+    <header class="top-bar">
+      <h1>로고</h1>
+      <nav aria-label="메인 탐색">
+        <!-- (aria-label 속성: 스크린 리더에게 "이 nav는 메인 탐색용이야"라고 이름표를 달아주는 웹 접근성 속성) -->
+      </nav>
+    </header>
+
+    <main>
+      <!-- (페이지당 무조건 1개) -->
+      <section aria-labelledby="sec1-title">
+        <h2 id="sec1-title">섹션 제목</h2>
+      </section>
+
+      <aside>
+        <!-- 사이드바, 광고 배너 등 부가 정보 -->
+      </aside>
+    </main>
+
+    <footer>
+      <!-- 저작권, 하단 정보 -->
+    </footer>
+
+    <!-- 
+      =========================
+      2. 텍스트 & 링크 & 이미지 속성
+      ========================= 
+    -->
+
+    <a href="https://uzu-dev.kr" target="_blank" rel="noopener noreferrer" download="file.pdf">UZU Dev 링크</a>
+    <!-- 
+      [a 태그 핵심 속성]
+      * href : 이동할 목적지 (URL, #id, mailto:, tel: 등)
+      * target="_blank" : 새 탭에서 열기 (기본값은 _self)
+      * rel="noopener noreferrer" : target="_blank" 쓸 때 보안 해킹(탭 탈취) 막아주는 필수 방패막!
+      * download : 클릭 시 페이지 이동 대신 해당 파일을 다운로드하게 만듦
+    -->
+
+    <img src="./lotto.jpg" alt="로또 자는 모습" width="500" height="300" loading="lazy" />
+    <!-- 
+      [img 태그 핵심 속성]
+      * src : 이미지 경로
+      * alt : 이미지 대체 텍스트 (시각장애인 & 검색엔진용. 진짜 필수!)
+      * loading="lazy" : 사용자 화면에 이미지가 보일 때쯤 지연 로딩해서 성능 최적화. (기본값 eager)
+      * width, height : 이미지 고유 사이즈 확보 (요즘은 렌더링 성능 향상을 위해 적어두고 CSS로 반응형 처리하는 추세임) 
+    -->
+
+    <!-- 
+      =========================
+      리스트 (목록)
+      ========================= 
+    -->
+
+    <ul>
+      <li>순서 없는 목록</li>
+    </ul>
+
+    <ol start="5" reversed type="A">
+      <li>순서 있는 목록</li>
+    </ol>
+    <!-- 
+      [ol 태그 속성]
+      * start="5" : 숫자 1부터 안 하고 5부터 시작함.
+      * reversed : 숫자가 역순(3, 2, 1)으로 카운트다운됨.
+      * type="A" : 번호 스타일 지정 (1, A, a, I, i 가능). 근데 요즘은 CSS(list-style-type)로 처리함. 
+    -->
+
+    <!-- 
+      =========================
+      미디어 & 임베드 속성
+      ========================= 
+    -->
+
+    <audio src="./bgm.mp3" controls loop autoplay muted preload="auto"></audio>
+    <video src="./cat.mp4" controls loop autoplay muted playsinline poster="./thumb.jpg" preload="metadata"></video>
+
+    <!-- 
+      [오디오/비디오 속성]
+      * controls : 재생/일시정지 바 표시
+      * loop : 무한 반복
+      * autoplay : 자동 재생 (크롬/사파리에서는 십중팔구 막힘)
+      * muted : 음소거 (이거랑 autoplay를 같이 써야 자동재생이 됨!)
+      * poster : 비디오 재생 전 썸네일 이미지 설정.
+      * playsinline : 모바일 아이폰에서 전체화면으로 안 넘어가고 그 자리에서 재생되게 함.
+      * preload="metadata" : 영상 전체를 미리 다운받지 말고, 길이/사이즈 정보만 우선 가볍게 받아옴 (성능 최적화). 
+    -->
+
+    <iframe src="https://youtube.com/..." title="유튜브 영상" allowfullscreen loading="lazy"></iframe>
+    <!-- 
+      [iframe 속성]
+      * title : 접근성을 위해 프레임 내용이 뭔지 무조건 명시.
+      * allowfullscreen : 사용자가 전체화면 버튼 누를 수 있게 허용. 
+    -->
+
+    <!-- 
+      =========================
+      표 (Table) 속성
+      ========================= 
+    -->
+
+    <table>
+      <caption>
+        가장 먼저 쓰는 표 제목
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">이름</th>
+          <th scope="col">성적</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">양예지</th>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td colspan="2">가로 2칸 병합</td>
+        </tr>
+        <tr>
+          <td rowspan="2">세로 2줄 병합</td>
+          <td>데이터</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- 
+      [표 속성]
+      * colspan="2" : 가로 칸 합치기
+      * rowspan="2" : 세로 줄 합치기
+      * scope="col" / scope="row" : th(제목 칸)가 가로(row)의 제목인지, 세로(col)의 제목인지 스크린 리더에게 확실히 알려주는 접근성 속성. 
+    -->
+
+    <!-- 
+      =========================
+      폼 (Form) & Input 속성 
+      ========================= 
+    -->
+
+    <form action="/login" method="POST" enctype="multipart/form-data" novalidate>
+      <!-- 
+        [form 핵심 속성]
+        * action : 데이터 보낼 서버 URL
+        * method : 전송 방식 (GET: 주소창에 다 보임 / POST: 몸통에 숨겨서 보냄)
+        * enctype="multipart/form-data" : 파일(이미지 등) 업로드할 때 무조건 적어야 하는 인코딩 방식!
+        * novalidate : 브라우저 기본 폼 검증(말풍선 경고창) 끄기 (보통 JS로 예쁘게 경고창 만들 때 씀). 
+      -->
+
+      <fieldset disabled>
+        <legend>회원 정보 (disabled 걸면 이 안의 모든 input 잠금됨)</legend>
+
+        <label for="uid">아이디</label>
+        <input
+          type="text"
+          id="uid"
+          name="userId"
+          placeholder="영문, 숫자"
+          required
+          minlength="4"
+          maxlength="12"
+          autofocus
+          autocomplete="off"
+        />
+        <!-- 
+          [input 텍스트류 속성]
+          * name : 서버로 전송되는 진짜 '키값' (없으면 데이터 안 날아감)
+          * required : 필수 입력 (안 채우면 폼 제출 안 됨)
+          * placeholder : 입력창 힌트 글씨
+          * maxlength / minlength : 최대/최소 글자 수 제한
+          * autofocus : 페이지 열리자마자 이 칸에 마우스 커서 깜빡이게 함
+          * autocomplete="off" : 브라우저 자동완성(예전 검색어 뜨는 거) 끄기
+          * readonly : 읽기 전용 (수정 불가, 드래그 복사 가능, 서버로 데이터는 날아감)
+          * disabled : 완전 비활성화 (클릭 불가, 회색 변함, 서버로 데이터 안 날아감!!) 
+        -->
+
+        <label for="upw">비밀번호</label>
+        <input type="password" id="upw" name="userPw" required />
+
+        <label for="age">나이</label>
+        <input type="number" id="age" name="age" min="1" max="100" step="1" />
+        <!-- (number 타입은 min, max, step으로 숫자 범위 지정 가능) -->
+
+        <label for="profile">프로필 사진</label>
+        <input type="file" id="profile" name="profile" accept="image/png, image/jpeg" multiple />
+        <!-- (file 타입에서 accept 쓰면 특정 확장자만 올릴 수 있게 제한, multiple 쓰면 여러 파일 선택 가능) -->
+
+        <label><input type="radio" name="gender" value="m" checked /> 남성</label>
+        <label><input type="radio" name="gender" value="f" /> 여성</label>
+        <!-- (checked : 라디오/체크박스에서 기본으로 선택된 상태로 만듦) -->
+
+        <select name="job" required>
+          <option value="" disabled selected>직업 선택</option>
+          <option value="fe">프론트엔드</option>
+        </select>
+        <!-- (selected : 드롭다운 메뉴에서 기본으로 선택된 상태) -->
+        <!-- (첫 번째 안내 문구(직업 선택)를 disabled selected로 두면 아주 깔끔한 필수 선택 창이 됨) -->
+
+        <textarea name="memo" rows="5" cols="30" placeholder="메모장"></textarea>
+        <!-- (rows: 세로 줄 수, cols: 가로 글자 수. 요즘 크기 조절은 CSS로 함) -->
+      </fieldset>
+
+      <button type="submit">제출하기</button>
+      <button type="reset">초기화 (요즘 잘 안 씀)</button>
+      <button type="button" onclick="alert('JS 연동용')">일반 버튼</button>
+    </form>
+
+    <!-- 
+      =========================
+      상호작용 태그
+      ========================= 
+    -->
+
+    <details open>
+      <summary>자주 묻는 질문 (아코디언 토글)</summary>
+      <p>기본적으로 접혀있는데, summary를 누르면 열림. 속성에 open을 적어두면 처음부터 열린 상태로 시작함!</p>
+    </details>
+  </body>
+</html>

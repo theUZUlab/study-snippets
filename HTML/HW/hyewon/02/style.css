@@ -1,0 +1,156 @@
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+.text-whisper {
+  color: #878787;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.page-wrapper {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.nav__list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.profile__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__list {
+  list-style: none;
+  list-style-position: inside;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-left: 1px solid #000000;
+  padding: 10px;
+}
+
+th:first-child {
+  border-left: none;
+}
+
+.seal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.seal-form__field {
+  width: 100%;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.seal-form__label {
+  display: inline-block;
+  position: absolute;
+  top: -8px;
+  left: 14px;
+  padding-left: 7px;
+  padding-right: 7px;
+  background: rgb(255, 255, 255);
+  font-size: 14px;
+  color: #888888;
+  font-weight: bold;
+}
+
+.seal-form__input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #dddddd !important;
+  font-size: 1rem;
+  line-height: 1.45;
+  letter-spacing: -0.04rem;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.seal-form__textarea-container {
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  height: 200px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.seal-form__textarea {
+  width: 100%;
+  height: 100%;
+  border: none !important;
+  outline: none !important;
+  box-sizing: border-box;
+
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.45;
+  letter-spacing: -0.04rem;
+  resize: none;
+}
+
+textarea {
+  resize: none;
+  /* height: 200px; */
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 40px 20px;
+  justify-content: center;
+}
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+}

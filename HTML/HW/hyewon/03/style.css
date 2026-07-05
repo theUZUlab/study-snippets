@@ -1,0 +1,204 @@
+.sr-only {
+  margin: -1px !important;
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+.text-whisper {
+  color: #878787;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-wrapper {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.header__logo {
+  width: 200px;
+}
+
+.nav__list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.profile__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__list {
+  list-style: none;
+  list-style-position: inside;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-left: 1px solid #000000;
+  padding: 10px;
+}
+
+th:first-child {
+  border-left: none;
+}
+
+.indulgence-decent__content {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.indulgence-decent__video {
+  width: 15%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.indulgence-decent__list {
+  list-style: none;
+  list-style-position: inside;
+  padding: 0;
+}
+
+.indulgence-record__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.indulgence-record__gallery {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  gap: 16px;
+}
+
+.indulgence-record__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.indulgence-record__image {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.indulgence-record__caption {
+  background: rgba(30, 30, 30, 0.85);
+  border-radius: 8px;
+  width: 100%;
+
+  color: #e3d9c6;
+  text-align: center;
+  font-style: italic;
+
+  padding: 8px;
+}
+
+.seal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.seal-form__field {
+  width: 100%;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.seal-form__label {
+  display: inline-block;
+  position: absolute;
+  top: -8px;
+  left: 14px;
+  padding-left: 7px;
+  padding-right: 7px;
+  background: rgb(255, 255, 255);
+  font-size: 14px;
+  color: #888888;
+  font-weight: bold;
+}
+
+.seal-form__input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #dddddd;
+  font-size: 1rem;
+  line-height: 1.45;
+  letter-spacing: -0.04rem;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.seal-form__textarea {
+  resize: none;
+  height: 200px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #dddddd;
+  font-size: 1rem;
+  line-height: 1.45;
+  letter-spacing: -0.04rem;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 40px 20px;
+  justify-content: center;
+}
+
+.footer__logo {
+  width: 100px;
+}
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+}

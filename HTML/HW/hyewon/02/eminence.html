@@ -1,0 +1,118 @@
+<!doctype html>
+<!-- 얘는 왜 영어로 되어 잇지...? -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 아까 얘기했겠지만 title은 페이지마자 고유한 제목을 갖고 있는 게 좋음 -->
+    <title>Villainess Profile</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-wrapper">
+        <header class="header">
+          <h1>Berry Rosencreutz</h1>
+          <nav>
+            <ul class="nav__list">
+              <li><a href="berry_portfolio.html">HOME</a></li>
+              <li><a href="portrait.html">Portrait</a></li>
+              <!-- 이것두 현재 페이지가 어디인지 알려주기 위해서 aria-current="page" 사용 권고 -->
+              <li><a href="eminence.html">Eminence</a></li>
+              <li><a href="requiem.html">Requiem</a></li>
+              <li><a href="seal.html">Seal</a></li>
+            </ul>
+          </nav>
+        </header>
+        <main>
+          <h2>Eminence</h2>
+          <section>
+            <h3>능력치</h3>
+            <table>
+              <caption class="sr-only">
+                Eminence
+              </caption>
+              <thead>
+                <tr>
+                  <!-- scope -->
+                  <th>항목</th>
+                  <th>등급</th>
+                  <th>비고</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <!-- scope -->
+                  <th>지력</th>
+                  <td>S+</td>
+                  <td>제국 아카데미 수석 을 거머쥔 천재적 두뇌로 판 전체를 쥐고 흔드는 완벽한 계략가</td>
+                </tr>
+                <tr>
+                  <th>마력</th>
+                  <td>S</td>
+                  <td>황실 수석 마법사들조차 경악하게 만드는 압도적인 마나량과 천부적인 재능</td>
+                </tr>
+                <tr>
+                  <th>기품</th>
+                  <td>S</td>
+                  <td>흠잡을 곳 없는 예법과 매혹적인 미소로 상대의 숨통을 우아하게 조이는 절대적인 기품</td>
+                </tr>
+                <tr>
+                  <th>재력</th>
+                  <td>S+</td>
+                  <td>
+                    황실 금고마저 우습게 만드는 천문학적 자금력으로 제국 경제의 숨통을 완벽하게 틀어쥔 실질적 권력
+                  </td>
+                </tr>
+                <tr>
+                  <th>사교력</th>
+                  <td>S</td>
+                  <td>숨 쉬듯 자연스럽게 제국의 유행을 선도하고 여론을 조작하는 사교계의 화려한 꽃</td>
+                </tr>
+                <tr>
+                  <th>정보력</th>
+                  <td>S+</td>
+                  <td>
+                    귀족들의 치부부터 황실의 약점까지 전부 손아귀에 넣고 목줄을 통제하는 지하 길드 '적월(Amaranth)'의
+                    진정한 흑막
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <hr />
+          <section>
+            <h3>공작저 금고</h3>
+            <ul>
+              <li>제국에 단 하나뿐인 '붉은 심장' 다이아몬드</li>
+              <li>그 누구의 의뢰도 받지 않는 까다로운 수석 디자이너가 영혼을 갈아 바친 오트쿠튀르</li>
+              <li>천문학적인 가치를 지닌 전설적인 거장의 숨겨진 유작</li>
+              <li>가문 소유의 대륙 최대 상단을 통해 가장 먼저 진상되는 최고급 실크와 진귀한 마도구들</li>
+            </ul>
+          </section>
+        </main>
+      </div>
+      <footer class="footer">
+        <!-- 웨얼... 이스 마이 사진...? -->
+        <img src="" alt="Rosencreutz Logo" />
+        <div class="footer__contact">
+          <p>
+            <strong>마법 통신구</strong> |
+            <!-- 누구엿지 민주인가 예지인가 할 때 얘기하긴 햇는데 address 태그 좋음 -->
+            <a href="mailto:202521005@chu.ac.kr">b_elladonna@empire.com</a>
+          </p>
+          <p>
+            <strong>지하 정보 길드 '적월'</strong> |
+            <!-- 
+              이거 얘기 안 하긴 햇는데 외부 링크로 할 대에는 target 속성이랑 rel 속성 사용 권장 
+              <a href="https://github.com/hye-wonn"
+                        target="_blank"
+                        rel="noopener noreferrer">GitHub (@amaranth_veil)</a>
+            -->
+            <a href="https://github.com/hye-wonn">GitHub (@amaranth_veil)</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

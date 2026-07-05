@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자신의 인적사항 들어간 포트폴리오 만들기</title>
+  </head>
+  <body>
+    <header>
+      <h1>포트폴리오</h1>
+
+      <nav>
+        <ul>
+          <!--  li 안에 a가 없음. nav는 클릭해서 이동 가능해야 됨 ㅠㅠ -->
+          <li>자기소개</li>
+          <li>기술 스택</li>
+          <li>깃헙</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>자기 소개</h2>
+        <!-- 나열한 내용이 p로 감싸져 있는데, 나열을 하고 싶으면 ul/ol/dl 을 사용해야 맞음. -->
+        <p>
+          <strong>이름:</strong>양예지 <br />
+          <strong>나이:</strong>22세 <br />
+          <strong>현재 소속 학교:</strong> 제주한라대학교
+        </p>
+      </section>
+      <!-- hr 태그는 섹션 구분에 쓰는 게 아니라, 한 섹션 내의 콘텐츠들의 주제의 전환을 뜻할 때 씀 -->
+      <hr />
+
+      <section>
+        <h2>기술 스택</h2>
+
+        <table>
+          <caption>
+            스택(stack)
+          </caption>
+
+          <thead>
+            <tr>
+              <!-- 메이비 scope 속성 얘기를 안 하긴 했나 싶은디 얘 쓸 때에는 무조건 scope가 있어야 됨 -->
+              <th>파이썬</th>
+              <th>HTML</th>
+              <th>JS</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <!-- th 하나 넣어서 td가 정확히 뭘 뜻하는 애들인지 정확하게 알려주는 게 좋을 듯 -->
+              <td>x</td>
+              <td>현재 배우는 중</td>
+              <td>x</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <hr />
+
+      <section>
+        <h2>깃헙</h2>
+
+        <a href="https://github.com/">
+          <!-- 민주 때 얘기했지만, alt는 구체적이면 구체적일수록 좋음. 역할이나 목적을 자세히 적어도 좋을 듯. 그리고 외부 이미지 URL 쓰는데 얘 만료되면 이미지 깨질 수 있으니 참고 -->
+          <img
+            src="https://velog.velcdn.com/images/ryu4219/post/47dfe9c2-7438-410a-ab60-257243260eb1/image.png"
+            alt="깃헙 사이트 사진"
+          />
+        </a>
+      </section>
+      <hr />
+      <!--서버 주소가 없어서 고냥 갔다 쓰는 거에용...-->
+      <section>
+        <!-- 웨얼 얼 유 heading tag... I miss you... -->
+        <form action="https://api.example.com/login" method="post">
+          <label for="usertext"> 궁금한 점</label>
+          <!-- 그 태그 콘텐츠 앞에 보면 공백이 있는디 이거 그대로 하면 브라우저에 그 공백이 그대로 표시됨 주의 -->
+          <textarea name="text" id="usertext" rows="5"> 저에게 궁금한 점이 있다면 여기에 적어 제출해주세요</textarea>
+
+          <button type="submit">제출</button>
+        </form>
+      </section>
+    </main>
+    <hr />
+    <footer>
+      <!-- 말은 안 했지만? 저작권 문구 관련해서는 small 태그가 짱 좋음. 저작권, 고지, 법적 면책 조항 같은 사이드 코멘트를 나타내는 태그임 -->
+      <p>© 2026. Yeji All rights reserved.</p>
+    </footer>
+  </body>
+</html>

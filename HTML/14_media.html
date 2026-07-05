@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>미디어 및 임베드 태그 완벽 가이드</title>
+  </head>
+
+  <body>
+    <!-- 
+      =========================
+      figure & figcaption 
+      =========================
+      단순히 이미지만 띡 보여주는 게 아니라, 
+      "이 콘텐츠에 대해 찰떡같은 설명을 덧붙이고 싶어!" 할 때 하나의 그룹으로 묶어주는 시맨틱 태그 
+    -->
+
+    <figure>
+      <img src="./14_image.jpg" alt="대박 완전 귀여운 갱얼쥐 로또" style="width: 100px" />
+      <figcaption>졸귀탱구리 귀여운 놈 ㅋ</figcaption>
+    </figure>
+    <!-- 
+      예시처럼 짱 귀여운 로또 사진에 주접 캡션을 달아줄 때 완벽한 마크업
+      시각장애인용 리더기도 이 태그를 만나면 "아, 지금부터 나오는 이미지랑 설명은 한 덩어리구나" 하고 논리적으로 연결해서 읽어줌 
+    -->
+
+    <figure>
+      <pre><code>greeting = "hello, world!"</code></pre>
+      <figcaption>python string 변수 선언 예시</figcaption>
+    </figure>
+    <!-- 
+      이미지뿐만 아니라 이렇게 코드 블록이나 긴 인용문(blockquote)을 통째로 감싸서 '제목'을 달아줄 때도 씀
+    -->
+
+    <!-- 
+      =========================
+      audio & video
+      ========================= 
+    -->
+
+    <audio src="./14_audio.mp3" controls></audio>
+    <!-- audio 태그. (mp3, ogg, wav 포맷 지원) -->
+
+    <video src="./14_video.mp4" style="width: 500px" controls poster="./14_image.jpg"></video>
+    <!-- video 태그. (mp4, webm 포맷 지원)-->
+    <!-- poster 속성으로 유튜브 썸네일처럼 재생 전에 보여줄 대기 화면 이미지를 깔아둘 수 있음. -->
+
+    <!-- 
+    [핵심 속성 정리]
+    controls : 재생/일시정지/볼륨 조절 바를 띄워줌. (이거 안 적으면 화면에 재생 버튼조차 안 생겨서 재생을 못 함!)
+    loop : 무한 반복 
+    -->
+
+    <!-- 
+    [자동재생 정책]
+    autoplay (자동재생) 속성을 썼는데 막상 브라우저에서 자동재생이 안 되는 경우가 짱 많음! 
+    요즘 크롬이나 사파리는 유저가 깜짝 놀라지 않도록 '소리가 나는 영상'의 자동재생을 억지로 막아버림. 
+    따라서 무조건 자동재생을 시키고 싶다면 <video autoplay muted> 처럼 '음소거(muted)' 속성이랑 무조건 한 세트로 묶어서 써야 함! 
+    -->
+
+    <!-- 
+    =========================
+    3. iframe (외부 콘텐츠 가져오기)
+    =========================
+    내 웹사이트에 네모난 '창문'을 뚫어서, 다른 웹사이트(유튜브 영상, 구글 지도 등)를 그대로 끌고 와서 보여주는 태그임. 
+    -->
+
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/U3uOCJl3RHQ?si=u5sFb7uXHm0DTMGw"
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+
+    <!-- 
+    title 속성: 
+    img 태그에 대체 텍스트(alt)가 있다면, iframe에는 title이 있음! 스크린 리더기가 이 프레임 안에 무슨 외부 사이트가 띄워져 있는지 파악하는 유일한 수단이므로 무조건 적어야 함 -->
+
+    <!-- 
+    allow 속성: 
+    이 뚫어놓은 창문 안에서 카메라 접근, 마이크 접근, 결제 API 등을 허용할지 말지 통제하는 보안 장치임
+    -->
+  </body>
+</html>

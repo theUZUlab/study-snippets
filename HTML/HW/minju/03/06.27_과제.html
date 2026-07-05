@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상 카페 추천</title>
+  </head>
+  <body>
+    <header>
+      <h1>가상 카페 소개</h1>
+      <p>환영합니다!</p>
+    </header>
+    <main>
+      <section>
+        <h2>카페 사진</h2>
+        <figure>
+          <img src="./카페.webp" alt="ｏｏ 카페의 모습" style="width: 100px" />
+          <figcaption>카페 사진입니다</figcaption>
+        </figure>
+        <figure>
+          <blockquote><p>짱 맛있는 카페요</p></blockquote>
+          <figcaption>-민주</figcaption>
+        </figure>
+      </section>
+      <hr />
+
+      <section>
+        <h2>카페노래</h2>
+        <audio src="./카페 노래.mp3" controls></audio>
+      </section>
+      <hr />
+      <section>
+        <h2>카페 영상</h2>
+        <video src="./카페 영상.mp4" style="width: 500px" controls poster="./카페.webp"></video>
+        <article>
+          <h2>핑크퐁퐁라떼로 유명해진 곳</h2>
+          <time datetime="2026-03-14">2026년 03월 14일</time>
+          <p>
+            베리 로젠크로이츠가 왔다간 곳으로 유명해졌다. 핑크퐁퐁라떼에는 딸기가 약간 들어가 보기엔 이상하나 맛 하나는
+            끝내준다.
+          </p>
+          <p>
+            그녀가 한번 먹고 반해 자주온다. 그래서 그녀가 홀린 사람들도 같이와 핑크퐁퐁라떼가 잘팔려 부자가 되는 중인
+            사장은 행복하다.
+          </p>
+        </article>
+      </section>
+      <hr />
+      <section>
+        <h2>오시는 길[지도]</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.892569715925!2d127.15525227565685!3d36.82109417224114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b298d965c542d%3A0x846c2ab51dece4bb!2z7Lm07Y6YIOyYqOuLpA!5e0!3m2!1sen!2skr!4v1782494133718!5m2!1sen!2skr"
+          width="600"
+          height="450"
+          title="구글 지도: '카페 온도' 위치"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+        <!-- title...? 퍼왔는데 없으면 title 넣으셔야 됨.  -->
+      </section>
+      <hr />
+      <section>
+        <h2>맛있는 카페 음료</h2>
+
+        <table>
+          <caption>
+            카페 메뉴 표
+          </caption>
+
+          <thead>
+            <tr>
+              <th scope="col">음료</th>
+              <th scope="col">커피</th>
+              <th scope="col">차</th>
+              <th scope="col">에이드</th>
+              <th scope="col">팝팝</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">메뉴</th>
+              <td>아메아메아메리카노</td>
+              <td>홍홍홍홍박차</td>
+              <td>어쩔레몬에이드</td>
+              <td>도파민과다팝</td>
+            </tr>
+          </tbody>
+          <!-- tfoot: 표의 합계나 요약, 평균 결론 행을 쓰는 애구요? tfoot이 굳이 필요 없으면 안 써도 됨 -->
+          <tfoot>
+            <tr>
+              <td>-</td>
+              <td>핑크퐁퐁라떼</td>
+              <td>오빠차뽑았다널데리러가</td>
+              <td>딸기사고딸기에이드</td>
+              <td>마이리틀소다팝</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+      <hr />
+      <section>
+        <h2>음료 골라용</h2>
+        <!-- action, method 속성 난중에 넣기 -->
+        <form>
+          <label for="cafeDrink">음료 골라요 : </label>
+          <select id="cafeDrink" name="cafe">
+            <option value="">--선택하숑--</option>
+            <option value="am">아메아메아메리카노</option>
+            <option value="la">핑크퐁퐁라떼</option>
+            <option value="fr">홍홍홍홍박차</option>
+            <option value="Sd">마이리틀소다팝</option>
+          </select>
+          <!-- type 속성 필요~ -->
+          <button>저장</button>
+        </form>
+      </section>
+    </main>
+    <!-- footer? Where is my footer? -->
+  </body>
+</html>

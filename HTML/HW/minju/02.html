@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <!-- lang="ko" 로 변환하기 -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자신의 인적사항이 들어간 포트폴리오 만들기</title>
+  </head>
+
+  <body>
+    <!-- h1 태그 실종 사건! -->
+    <main>
+      <section>
+        <h2>기본 인적사항</h2>
+
+        <table>
+          <caption>
+            기본 인적사항 표
+          </caption>
+
+          <thead>
+            <tr>
+              <th scope="col">이름</th>
+              <th scope="col">생년월일</th>
+              <th scope="col">거주지역</th>
+              <th scope="col">MBTI</th>
+              <th scope="col">이메일</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>최민주</td>
+              <td>2006.09.28</td>
+              <!-- 먼가 이상해서 자세하게 찾아본 결과, i 태그는 일반 산문과 구분되는 텍스트로 외국어, 전문 용어, 생각 등에 쓰이는 태그임... 그래서 얘를 디자인 요소로 사용한 건지 뭔지는 모르겠으나 그러면 안 됨! -->
+              <td>제주특별자치도 제주시 <i>화북동</i></td>
+              <td>ENFJ / ESFJ</td>
+              <td>
+                <a href="mailto:qlalf12151615@gmail.com">최민주 이메일</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- 전에 말씀 드렸지만? br은 요소와 요소 사이의 간격을 보는 게 아니라, 텍스트의 줄바꿈을 표현하고 싶을 때 사용함 -->
+      <br />
+      <hr />
+      <section>
+        <h2>학력</h2>
+        <h3>출신 학교</h3>
+        <ol>
+          <li>화북초등학교</li>
+          <li>제주동중학교</li>
+          <li>제주여자고등학교</li>
+          <li>제주대학교</li>
+        </ol>
+        <hr />
+
+        <h3>전공 및 학년</h3>
+
+        <ul>
+          <li>데이터사이언스학과 1학년</li>
+          <li><strong>미래목표:</strong>컴퓨터공학과</li>
+        </ul>
+      </section>
+      <hr />
+      <section>
+        <!-- h2 어디 감? -->
+        <h3>하고 싶은 말</h3>
+        <p><strong>하고 싶은 말 :</strong> 느리지만 포기하지 않고 따라갈게요!</p>
+      </section>
+    </main>
+    <hr />
+
+    <!-- 웬만하면 페이지의 핵심 콘텐츠들은 다 main 태그 안에 넣는 것을 권장함 -->
+    <!-- 예를 들어 header, nav, footer, aside 정도가 main 밖에 있는 애들 -->
+    <section>
+      <article>
+        <h2>민주가 좋아하는 음식</h2>
+        <!-- datetime="" 쓸 때에는 ISO 8601 형식을 따르기 때문에, 날짜 구분자는 마침표가 아닌 하이픈을 사용해야 됨 -->
+        <time datetime="2026.06">2026년 06월</time>
+        <p>깻잎이 들어간 참치 김밥도 좋고 기본 김밥도 좋다. 친구들 사이에서 유명한 일식광인이다.</p>
+        <p>오늘은 엽떡을 먹을 것이다.</p>
+      </article>
+    </section>
+    <hr />
+    <section>
+      <h2>내가 좋아하는 음식</h2>
+      <!-- form에 원래는 action이랑 method 속성이 필요하긴 함. -->
+      <form>
+        <label for="myFood">민주가 좋아하는 음식은? : </label>
+        <!-- 난중에 알려줄 거지만 input에 name 속성이 필요긴 함 -->
+        <input type="text" id="myFood" placeholder="ex.김밥/일식" />
+        <!-- 얘도 원래는 button 쓸 때 type 속성이 필요하긴 함 -->
+        <button>저장</button>
+        <br />
+        <label for="countryFood">민주는 어느 나라 음식을 가장 좋아하게요> : </label>
+        <select id="countryFood" name="country">
+          <option value="">--선택하숑--</option>
+          <option value="kr">한국</option>
+          <option value="us">미국</option>
+          <option value="jp">일본</option>
+        </select>
+        <!-- form 안에 버튼이 두 개라서 자바스크립트 동작 시 헷갈릴 수 있음. 하나의 인풋에는 하나의 폼이 감싸고 있는 걸 추천 -->
+        <button>저장</button>
+      </form>
+    </section>
+    <hr />
+
+    <header>
+      <!-- header는 페이지나 섹션의 소개 및 탐색 콘텐츠를 담는 곳임. 이미지 하나를 담는 용도로 사용 XX -->
+      <h2>사진</h2>
+      <!-- 이미지의 alt는 구체적이면 구체적일수록 좋음 -->
+      <img
+        src="https://marketplace.canva.com/MetX8/MAGaIGMetX8/1/tl/canva-cute-puppy-illustration-MAGaIGMetX8.png"
+        alt="강아지"
+      />
+    </header>
+
+    <br /><br /><br /><br /><br />
+    <hr />
+    <footer>
+      <!-- 저작자의 이름은 cite나 p만 씀 i 태그는 굳이? -->
+      <p><i>최민주</i>, 저작권은 내꺼</p>
+      <!-- 안 알려주긴 했는데 address라고 연락처 정보를 담는 태그로 하면 좋을 듯 ㅋ -->
+      <p>문의 : qlalf12151615@gmail.com</p>
+    </footer>
+  </body>
+</html>
